@@ -6,6 +6,11 @@
 #include "cards.h"
 #include <unistd.h>
 
+void display_how_to_play()
+{
+    printf("\n\n                                                               \033[0;34mHOW TO PLAY\033[0m                                                \n\n                                                \033[0;31m*****************************************\033[0m\n\nUNO is a popular card game that has been enjoyed by people across the globe. The game was originally developed in 1971.\n\nThe main objective of UNO is to be the first player to play all your cards.\nUNO is a game that blends elements of strategy with a touch of luck.\n\nA standard UNO deck consists of 108 cards.\nThese cards are divided into four colors: Red, Yellow, Green, and Blue (depicted as R, Y, G, B in-game).\n\nEach color has numbers from 0 to 9, as well as special action cards.\nThe special cards are:\n\033[0;33mSkip:\033[0m skipping a player's turn\n\033[0;33mReverse:\033[0m reversing the order of play\n\033[0;33mDraw 2:\033[0m forcing the next player to draw 2 cards\n\033[0;33mWild card:\033[0m Allows players to change the color of the card to be played\n\033[0;33mWild Draw Four:\033[0m Similar to the wild card but forces the next player to draw 4 cards and forfeit their turn\n\n\033[0;32mSetup:\033[0m\n1. First shuffle the deck of cards and deal 7 cards to each player.\n2. Next place the remaining deck face down on the table to form the draw pile.\n3. Finally, turn the top card from the draw pile face up next to create a discard pile and start the game.\n\n\033[0;32mGameplay:\033[0m\n- First, the players take turns playing a card that matches the top card of the discard pile in either color or number.\n- If a player cannot play the card they have, they must draw a card from the draw pile. If that card can be played, they may play it immediately. Otherwise, their turn comes to an end.\n\n- When a player has only one card left, they must say 'UNO' and alert the other players. \nIf they fail to do so and get caught, it results in a penalty of drawing two cards.\n- The first player to play all their cards wins.\n\n                                                \033[0;31m*****************************************\033[0m");
+}
+
 void arrow1(int optPos, int curPos){
         if(optPos==curPos)printf(">");
 };
@@ -225,6 +230,23 @@ int main(){
             printf("You've have won this game\n");
             sleep(5);
             break;
+        case 'h':
+        system("cls");
+        display_how_to_play();
+        printf("\n[PRESS ANY KEY TO CONTINUE]\n");
+        getch();
+        system("cls");
+        break;
+        case 'r':
+        system("cls");
+        printf("=== DEVELOPED BY ===\n");
+        printf("Arnab - Game Logic, Game Design, User Interactions\n");
+        printf("Arun - Card structure and functions using Stack\n");
+        printf("Anumitha - Display elements and UI design\n");
+        printf("Ankitha - Player turn management and game Logic\n");
+        sleep(10);
+        system("cls");        
+        break;
         case 'x':
         break;
         }
